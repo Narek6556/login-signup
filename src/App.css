@@ -86,3 +86,24 @@ body {
   font-size: 20px;
   color: rgb(32, 88, 141);
 }
+
+.users-table {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.users-table tr:first-child {
+  background-color: rgb(32, 88, 141);
+  color: white;
+  text-transform: capitalize;
+  font-size: 27px;
+}
+
+tr {
+  font-size: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+  /* color: rgb(32, 88, 141); */
+}

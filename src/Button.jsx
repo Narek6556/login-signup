@@ -6,9 +6,21 @@ class Button extends Component {
         super(props);
     }
     render() {
+        const {
+            type, 
+            onClick, 
+            text
+        } = this.props;
+        
         return (
             <div className="button-cont">
-                <a className="link">{this.props.text}</a>
+                <button 
+                    type={type} 
+                    onClick={onClick} 
+                    className="link"
+                >
+                    {text}
+                </button>
             </div>
         );
     }

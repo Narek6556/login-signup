@@ -4,13 +4,14 @@ import './App.css';
 import Home from './Home';
 import Signup from './Signup';
 import Login from './Login';
+import UsersPage from './UsersPage';
 
 
 class App extends Component {
     render() {
       return (
         <Router>
-            <div className="app">
+            <>
               <Switch>
                 <Route path="/" exact>
                   <Home />
@@ -21,8 +22,11 @@ class App extends Component {
                 <Route path="/signup">
                   <Signup />
                 </Route>
+                <Route path="/users-page">
+                  <UsersPage />
+                </Route>
               </Switch>
-            </div>
+            </>
         </Router>
       );
     }

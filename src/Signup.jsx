@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect, withRouter } from "react-router-dom";
 import Title from "./Title";
 import './App.css';
 import Button from "./Button";
@@ -8,18 +8,35 @@ class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {
-                username: '',
-                email: '',
-                password: ''
-            }
+            username: '',
+            email: '',
+            password: ''
         }
     }
 
     addUser = async (e) => {
         e.preventDefault();
-        let url = 'http://localhost:3001/users'
-        fetch(url, this.state.data);
+        const { username, email, password } = this.state;
+        const url = 'http://localhost:3001/users';
+        const body = JSON.stringify({
+            username,
+            email,
+            password,
+        })
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body,
+        }
+        fetch(url, options);
+        this.props.history.push("/login");
+    }
+
+    onChangeHandler = (event) => {
+        const {value, name} = event.target;
+        this.setState({ [name]: value});
     }
 
     render() {
@@ -32,23 +49,27 @@ class Signup extends Component {
                 </div>
                 <Title text="SignUp"/>
                 <div className="form-center">
-                    <form className="input-container">
+                    <form className="input-container" onSubmit={this.addUser}>
                         <label>E-Mail</label>
-                        <input type="e-mail" onChange={(e) => {
-                            this.setState({emailValue: e.target.value})
-                        }}/>
+                        <input 
+                            type="e-mail" 
+                            name="email" 
+                            onChange={this.onChangeHandler}
+                        />
                         <label>Username</label>
-                        <input type="username" onChange={(e) => {
-                            this.setState({nameValue: e.target.value})
-                        }}/>
+                        <input 
+                            type="username" 
+                            name="username" 
+                            onChange={this.onChangeHandler}
+                        />
                         <label>Password</label>
-                        <input type="password" onChange={(e) => {
-                            this.setState({passwordValue: e.target.value})
-                        }}/>
-                        <div className="button-area" onClick={
-                            (e) => {this.addUser(e)}
-                        }>
-                            <Button text="Sign Up"/>
+                        <input 
+                            type="password" 
+                            name="password" 
+                            onChange={this.onChangeHandler}
+                        />
+                        <div className="button-area">
+                            <Button type="submit" text="Sign Up"/>
                         </div>
                     </form>
                 </div>
@@ -57,4 +78,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default withRouter(Signup);
