@@ -1,14 +1,15 @@
 import { Component } from "react";
 import { Link, Redirect, withRouter } from "react-router-dom";
-import Title from "./Title";
-import './App.css';
-import Button from "./Button";
+import Title from "../components/Title";
+import '../App.css';
+import Button from "../components/Button";
 
 class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
+            first_name: '',
+            last_name: '',
             email: '',
             password: ''
         }
@@ -16,10 +17,11 @@ class Signup extends Component {
 
     addUser = async (e) => {
         e.preventDefault();
-        const { username, email, password } = this.state;
+        const { first_name, last_name, email, password } = this.state;
         const url = 'http://localhost:3001/users';
         const body = JSON.stringify({
-            username,
+            first_name,
+            last_name,
             email,
             password,
         })
@@ -56,10 +58,16 @@ class Signup extends Component {
                             name="email" 
                             onChange={this.onChangeHandler}
                         />
-                        <label>Username</label>
+                        <label>First name</label>
                         <input 
-                            type="username" 
-                            name="username" 
+                            type="first_name" 
+                            name="first_name" 
+                            onChange={this.onChangeHandler}
+                        />
+                        <label>Last name</label>
+                        <input 
+                            type="last_name" 
+                            name="last_name" 
                             onChange={this.onChangeHandler}
                         />
                         <label>Password</label>

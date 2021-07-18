@@ -1,8 +1,8 @@
 import { Component } from "react";
-import Button from "./Button";
-import Title from "./Title";
+import Button from "../components/Button";
+import Title from "../components/Title";
 import { Link } from "react-router-dom";
-import './App.css';
+import '../App.css';
 
 class Home extends Component {
     constructor(props) {

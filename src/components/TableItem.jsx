@@ -2,12 +2,13 @@ import { Component } from "react";
 
 class TableItem extends Component {
     render() {
-        const {username, email, id} = this.props;
+        const { first_name, last_name, email, id } = this.props;
         return (
             <>
                 <tr>
                     <th>{id}</th>
-                    <th>{username}</th>
+                    <th>{first_name}</th>
+                    <th>{last_name}</th>
                     <th>{email}</th>
                 </tr>
             </>

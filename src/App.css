@@ -107,3 +107,11 @@ tr:nth-child(even) {
   background-color: white;
   /* color: rgb(32, 88, 141); */
 }
+
+.button-area-home-page a:first-child {
+  margin-right: 15px;
+}
+
+.button-area-home-page a:last-child {
+  margin-left: 15px;
+}

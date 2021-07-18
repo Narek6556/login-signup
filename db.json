@@ -1,46 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "Narek6556",
-      "email": "aghasyan.na@gmail.com",
-      "password": "1234Nar"
-    },
-    {
-      "username": "a",
+      "first_name": "Narek",
+      "last_name": "Aghasyan",
       "email": "aghasyan.na@gmail.com",
       "password": "a",
-      "id": 2
-    },
-    {
-      "username": "Narekkkk",
-      "email": "agasyan.na@gmail.com",
-      "password": "123",
-      "id": 3
-    },
-    {
-      "username": "Narek-K",
-      "email": "aghasyan.na@gmail.com",
-      "password": "456",
-      "id": 4
-    },
-    {
-      "username": "Narek-KKK",
-      "email": "aghasyan.na@gmail.com",
-      "password": "5667",
-      "id": 5
-    },
-    {
-      "username": "Narek-KKK",
-      "email": "aghasyan.na@gmail.com",
-      "password": "5667",
-      "id": 6
-    },
-    {
-      "username": "NAjs",
-      "email": "agasyan.na@gmail.com",
-      "password": "123",
-      "id": 7
+      "id": 1
     }
   ]
 }

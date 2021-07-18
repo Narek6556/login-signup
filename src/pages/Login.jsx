@@ -1,8 +1,10 @@
 import { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import Title from "./Title";
-import './App.css';
-import Button from "./Button";
+import Title from "../components/Title";
+import '../App.css';
+import Button from "../components/Button";
+import {getProfile} from "../store/actions/profileActions";
+import {connect} from "react-redux";
 
 class Login extends Component {
     constructor(props) {
@@ -13,6 +15,8 @@ class Login extends Component {
             isIncorect: ''
         }
     }
+
+
 
     onChangeHandler = (event) => {
         const {value, name} = event.target;
@@ -35,7 +39,9 @@ class Login extends Component {
         let data = await res.json()
         if (data.length > 0) {
             localStorage.setItem('id', data[0].id);
-            this.props.history.push("/users-page");
+            this.props.history.push("/home-page");
+            console.log(data[0]);
+            this.props.getProfile(data[0]);
         } else {
             this.setState({isIncorect: "Entered incorrect email and/or password"});
         }
@@ -68,6 +74,11 @@ class Login extends Component {
                         />
                         <p>{this.state.isIncorect}</p>
                         <div className="button-area">
+                            <Link to="/signup">
+                                <Button text="SignUp"/>
+                            </Link> 
+                        </div>
+                        <div className="button-area">
                             <Button type = "submit" text="Login"/>
                         </div>
                     </form>
@@ -78,4 +89,9 @@ class Login extends Component {
     }
 }
 
-export default withRouter(Login);
+const mapDispatchToProps = {
+    getProfile
+}
+
+
+export default connect(null, mapDispatchToProps)(withRouter(Login));

@@ -1,9 +1,9 @@
 import { Component } from "react";
-import Title from "./Title";
+import Title from "../components/Title";
 import {Redirect, Link} from 'react-router-dom';
-import TableItem from "./TableItem";
-import Button from "./Button";
-import './App.css';
+import TableItem from "../components/TableItem";
+import Button from "../components/Button";
+import '../App.css';
 
 class UsersPage extends Component {
 
@@ -43,7 +43,6 @@ class UsersPage extends Component {
             return <Redirect to="/login" />
         }
         
-        console.log(this.state.users);
         return (
             <>
                 <div className="button-area button-area-home">
@@ -55,7 +54,8 @@ class UsersPage extends Component {
                 <table className="users-table">
                     <tr>
                         <th>id</th>
-                        <th>user name</th>
+                        <th>first name</th>
+                        <th>second name</th>
                         <th>email</th>
                     </tr>
                     {

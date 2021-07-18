@@ -1,10 +1,12 @@
 import { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './Home';
-import Signup from './Signup';
-import Login from './Login';
-import UsersPage from './UsersPage';
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import UsersPage from './pages/UsersPage';
+import ProfilePage from './pages/ProfilePage';
+import HomePage from './pages/HomePage';
 
 
 class App extends Component {
@@ -24,6 +26,12 @@ class App extends Component {
                 </Route>
                 <Route path="/users-page">
                   <UsersPage />
+                </Route>
+                <Route path="/home-page">
+                  <HomePage />
+                </Route>
+                <Route path="/profile-page">
+                  <ProfilePage />
                 </Route>
               </Switch>
             </>
