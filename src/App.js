@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import UsersPage from './pages/UsersPage';
 import ProfilePage from './pages/ProfilePage';
 import HomePage from './pages/HomePage';
+import PrivateRoute from './components/PrivateRoute';
 
 
 class App extends Component {
@@ -24,15 +25,9 @@ class App extends Component {
                 <Route path="/signup">
                   <Signup />
                 </Route>
-                <Route path="/users-page">
-                  <UsersPage />
-                </Route>
-                <Route path="/home-page">
-                  <HomePage />
-                </Route>
-                <Route path="/profile-page">
-                  <ProfilePage />
-                </Route>
+                <PrivateRoute component = {UsersPage} path="/users-page" />
+                <PrivateRoute component = {HomePage} path="/home-page" />
+                <PrivateRoute component = {ProfilePage} path="/profile-page" />
               </Switch>
             </>
         </Router>

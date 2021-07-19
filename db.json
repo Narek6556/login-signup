@@ -6,6 +6,13 @@
       "email": "aghasyan.na@gmail.com",
       "password": "a",
       "id": 1
+    },
+    {
+      "first_name": "Narek",
+      "last_name": "Aghasyan",
+      "email": "agasyan.na@gmail.com",
+      "password": "Narek1223",
+      "id": 2
     }
   ]
 }

@@ -1,18 +1,16 @@
 import { Component } from "react";
 import Title from "../components/Title";
-import {Redirect, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import TableItem from "../components/TableItem";
 import Button from "../components/Button";
+import {connect} from "react-redux";
+import {addUser} from "../store/actions/usersListAction";
 import '../App.css';
 
 class UsersPage extends Component {
 
     constructor(props) {
         super(props);
-        
-        this.state = {
-            users: []
-        }
     }
     
 
@@ -24,47 +22,52 @@ class UsersPage extends Component {
                 'Content-Type': 'application/json'
             },
         }
-        let res = fetch(url, options)
-                    .then(data => {
-                        // console.log(data);
-                        return data.json();
-                        // this.setState({user: data.json()});
-                    }).then(data => {
-                        this.setState({users: data});
-                    }) 
-        // console.log(res);
-        // let data = res.json()
-        // console.log(res);
+        fetch(url, options)
+            .then(data => {
+                return data.json();
+            }).then(data => {
+                this.props.addUser(data);
+            }) 
     }
 
     render() {
-        let havId = localStorage.getItem("id");
-        if (havId == null) {
-            return <Redirect to="/login" />
-        }
-        
         return (
             <>
-                <div className="button-area button-area-home">
+                <div className="button-area-home button-home">
                     <Link to="/">
                         <Button text="Home"/>
                     </Link>
                 </div>
                 <Title text="Users Page"/>
                 <table className="users-table">
-                    <tr>
-                        <th>id</th>
-                        <th>first name</th>
-                        <th>second name</th>
-                        <th>email</th>
-                    </tr>
-                    {
-                        this.state.users.map(user => <TableItem {...user}/>)
-                    }
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>first name</th>
+                            <th>second name</th>
+                            <th>email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.props.users.map(user => <TableItem key = {user.id} {...user}/>)
+                        }
+                    </tbody>
                 </table>
             </>
         );
     }
 }
 
-export default UsersPage;
+function mapStateToProps(state) {
+    const {users} = state;
+    return {
+        users
+    }
+}
+
+const mapDispatchToProps = {
+    addUser,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsersPage);

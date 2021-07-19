@@ -35,24 +35,20 @@ class Login extends Component {
             },
         }
         let res = await fetch(url, options)
-        // console.log(res);
         let data = await res.json()
         if (data.length > 0) {
             localStorage.setItem('id', data[0].id);
             this.props.history.push("/home-page");
-            console.log(data[0]);
             this.props.getProfile(data[0]);
         } else {
             this.setState({isIncorect: "Entered incorrect email and/or password"});
         }
-        // localStorage.setItem('id', )
     }
 
     render() {
-        // console.log(this.props);
         return (
             <div className="login">
-                <div className="button-area button-area-home">
+                <div className="button-home button-area-home">
                     <Link to="/">
                         <Button text="Home"/>
                     </Link>

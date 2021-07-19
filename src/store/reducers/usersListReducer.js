@@ -1,8 +1,6 @@
 import { usersListTypes } from "../types/usersListTypes";
 
-const initialState = {
-
-}
+const initialState = [];
 
 function usersListReducer(state = initialState, action) {
     switch (action.type) {
@@ -10,6 +8,8 @@ function usersListReducer(state = initialState, action) {
             return {
                 ...state,
             }
+        case usersListTypes.ADD_USER:
+            return action.payload;
         default:
             return state;
     }

@@ -40,6 +40,11 @@ body {
   justify-content: space-between;
 }
 
+.button-home {
+  display: flex;
+  justify-content: space-between;
+}
+
 .button-area {
   display: flex;
   justify-content: center;
@@ -92,7 +97,7 @@ body {
   margin-left: 10%;
 }
 
-.users-table tr:first-child {
+.users-table thead > tr:first-child {
   background-color: rgb(32, 88, 141);
   color: white;
   text-transform: capitalize;
@@ -101,17 +106,24 @@ body {
 
 tr {
   font-size: 20px;
+  background-color: white;
 }
 
-tr:nth-child(even) {
-  background-color: white;
-  /* color: rgb(32, 88, 141); */
+.button-area-home-page {
+  display: flex;
+  justify-content: space-between;
+  width: 387px;
+  margin-left: -40px;
+}
+
+.button-area-home-page > a{
+  width: 230px;
 }
 
 .button-area-home-page a:first-child {
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .button-area-home-page a:last-child {
-  margin-left: 15px;
+  margin-left: 10px;
 }

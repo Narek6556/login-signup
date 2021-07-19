@@ -44,7 +44,7 @@ class Signup extends Component {
     render() {
         return (
             <div className="signup">
-                <div className="button-area button-area-home">
+                <div className="button-home button-area-home">
                     <Link to="/">
                         <Button text="Home"/>
                     </Link>
