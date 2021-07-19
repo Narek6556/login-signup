@@ -35,6 +35,10 @@ body {
   text-decoration: none;
 }
 
+button {
+  border: 2px solid rgb(32, 88, 141);
+}
+
 .button-area-home {
   display: flex;
   justify-content: space-between;
