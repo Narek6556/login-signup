@@ -32,7 +32,7 @@ class UsersPage extends Component {
 
     render() {
         return (
-            <>
+            <div>
                 <div className="button-area-home button-home">
                     <Link to="/">
                         <Button text="Home"/>
@@ -54,7 +54,7 @@ class UsersPage extends Component {
                         }
                     </tbody>
                 </table>
-            </>
+            </div>
         );
     }
 }

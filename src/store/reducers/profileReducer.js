@@ -8,7 +8,7 @@ const initialState = {
 
 function profileReducer(state = initialState, action) {
     switch (action.type) {
-        case profileTypes.GET_PROFILE:
+        case profileTypes.SET_PROFILE:
             return {
                 ...state,
                 first_name: action.payload.first_name,

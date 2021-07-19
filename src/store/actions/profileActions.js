@@ -4,7 +4,7 @@ export const editProfile = {
     type: profileTypes.EDIT_PROFILE,
 }
 
-export const getProfile = (user) => ({
-    type: profileTypes.GET_PROFILE,
+export const setProfile = (user) => ({
+    type: profileTypes.SET_PROFILE,
     payload: user
 })

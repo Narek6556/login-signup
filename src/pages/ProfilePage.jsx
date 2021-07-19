@@ -3,14 +3,30 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import Title from "../components/Title";
 import {connect} from "react-redux";
-import {Redirect} from "react-router-dom";
+import {setProfile} from "../store/actions/profileActions";
 
 class ProfilePage extends Component {
+
+    componentDidMount() {
+        let url = `http://localhost:3001/users?id=${localStorage.getItem('id')}`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }
+        fetch(url, options)
+            .then(data => {
+                return data.json();
+            }).then(data => {
+                this.props.setProfile(data[0]);
+            }) 
+    }
 
     render() {
         const {first_name, last_name} = this.props.profile
         return (
-            <>
+            <div>
                 <div className="profile">
                     <div className="button-home button-area-home">
                         <Link to="/">
@@ -23,7 +39,7 @@ class ProfilePage extends Component {
                         <p>last name: {last_name}</p>
                     </div>
                 </div>
-            </>
+            </div>
         );
     }
 }
@@ -35,4 +51,8 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, null)(ProfilePage);
+const mapDispatchToProps = {
+    setProfile,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);

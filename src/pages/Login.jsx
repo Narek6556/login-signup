@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import Title from "../components/Title";
 import '../App.css';
 import Button from "../components/Button";
-import {getProfile} from "../store/actions/profileActions";
+import {setProfile} from "../store/actions/profileActions";
 import {connect} from "react-redux";
 
 class Login extends Component {
@@ -34,12 +34,12 @@ class Login extends Component {
                 'Content-Type': 'application/json'
             },
         }
-        let res = await fetch(url, options)
-        let data = await res.json()
+        const res = await fetch(url, options)
+        const data = await res.json()
         if (data.length > 0) {
             localStorage.setItem('id', data[0].id);
             this.props.history.push("/home-page");
-            this.props.getProfile(data[0]);
+            this.props.setProfile(data[0]);
         } else {
             this.setState({isIncorect: "Entered incorrect email and/or password"});
         }
@@ -86,7 +86,7 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = {
-    getProfile
+    setProfile
 }
 
 

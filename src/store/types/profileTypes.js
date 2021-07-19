@@ -1,7 +1,7 @@
-const GET_PROFILE = 'GET_PROFILE';
+const SET_PROFILE = 'SET_PROFILE';
 const EDIT_PROFILE = 'EDIT_PROFILE';
 
 export const profileTypes = {
-    GET_PROFILE,
+    SET_PROFILE,
     EDIT_PROFILE
 }
