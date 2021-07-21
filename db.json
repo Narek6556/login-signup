@@ -1,17 +1,17 @@
 {
   "users": [
     {
-      "first_name": "Narek",
+      "first_name": "Karen",
       "last_name": "Aghasyan",
-      "email": "aghasyan.na@gmail.com",
-      "password": "a",
+      "email": "agasyan.na@gmail.com",
+      "password": "123",
       "id": 1
     },
     {
-      "first_name": "Narek",
-      "last_name": "Aghasyan",
-      "email": "agasyan.na@gmail.com",
-      "password": "Narek1223",
+      "first_name": "Karen",
+      "last_name": "Agasyan",
+      "email": "aghasyan.na@gmail.com",
+      "password": "123",
       "id": 2
     }
   ]

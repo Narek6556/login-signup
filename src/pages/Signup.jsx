@@ -1,23 +1,38 @@
-import { Component } from "react";
-import { Link, Redirect, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Title from "../components/Title";
 import '../App.css';
 import Button from "../components/Button";
+import  {useState} from "react";
 
-class Signup extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            first_name: '',
-            last_name: '',
-            email: '',
-            password: ''
+
+function SignUp(props) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [first_name, setFirst_name] = useState('');
+    const [last_name, setLast_name] = useState('');
+
+    const onChangeHandler = (event) => {
+        const {value, name} = event.target;
+        switch (name) {
+            case "email":
+                setEmail(value);
+                break;
+            case "password":
+                setPassword(value);
+                break;
+            case "first_name":
+                setFirst_name(value);
+                break;
+            case "last_name":
+                setLast_name(value);
+                break;
+            default:
+                break;
         }
     }
 
-    addUser = async (e) => {
+    const addUser = async (e) => {
         e.preventDefault();
-        const { first_name, last_name, email, password } = this.state;
         const url = 'http://localhost:3001/users';
         const body = JSON.stringify({
             first_name,
@@ -33,57 +48,50 @@ class Signup extends Component {
             body,
         }
         fetch(url, options);
-        this.props.history.push("/login");
+        props.history.push("/login");
     }
 
-    onChangeHandler = (event) => {
-        const {value, name} = event.target;
-        this.setState({ [name]: value});
-    }
-
-    render() {
-        return (
-            <div className="signup">
-                <div className="button-home button-area-home">
-                    <Link to="/">
-                        <Button text="Home"/>
-                    </Link>
-                </div>
-                <Title text="SignUp"/>
-                <div className="form-center">
-                    <form className="input-container" onSubmit={this.addUser}>
-                        <label>E-Mail</label>
-                        <input 
-                            type="e-mail" 
-                            name="email" 
-                            onChange={this.onChangeHandler}
-                        />
-                        <label>First name</label>
-                        <input 
-                            type="first_name" 
-                            name="first_name" 
-                            onChange={this.onChangeHandler}
-                        />
-                        <label>Last name</label>
-                        <input 
-                            type="last_name" 
-                            name="last_name" 
-                            onChange={this.onChangeHandler}
-                        />
-                        <label>Password</label>
-                        <input 
-                            type="password" 
-                            name="password" 
-                            onChange={this.onChangeHandler}
-                        />
-                        <div className="button-area">
-                            <Button type="submit" text="Sign Up"/>
-                        </div>
-                    </form>
-                </div>
+    return (
+        <div className="signup">
+            <div className="button-home button-area-home">
+                <Link to="/">
+                    <Button text="Home"/>
+                </Link>
             </div>
-        );
-    }
+            <Title text="SignUp"/>
+            <div className="form-center">
+                <form className="input-container" onSubmit={addUser}>
+                    <label>E-Mail</label>
+                    <input 
+                        type="e-mail" 
+                        name="email" 
+                        onChange={onChangeHandler}
+                    />
+                    <label>First name</label>
+                    <input 
+                        type="first_name" 
+                        name="first_name" 
+                        onChange={onChangeHandler}
+                    />
+                    <label>Last name</label>
+                    <input 
+                        type="last_name" 
+                        name="last_name" 
+                        onChange={onChangeHandler}
+                    />
+                    <label>Password</label>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        onChange={onChangeHandler}
+                    />
+                    <div className="button-area">
+                        <Button type="submit" text="Sign Up"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
 }
 
-export default withRouter(Signup);
+export default withRouter(SignUp);

@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
@@ -8,12 +7,11 @@ import UsersPage from './pages/UsersPage';
 import ProfilePage from './pages/ProfilePage';
 import HomePage from './pages/HomePage';
 import PrivateRoute from './components/PrivateRoute';
+import EditUserDataPage from './pages/EditUserDataPage';
 
-
-class App extends Component {
-    render() {
-      return (
-        <Router>
+function App() {
+  return (
+    <Router>
             <>
               <Switch>
                 <Route path="/" exact>
@@ -28,11 +26,10 @@ class App extends Component {
                 <PrivateRoute component = {UsersPage} path="/users-page" />
                 <PrivateRoute component = {HomePage} path="/home-page" />
                 <PrivateRoute component = {ProfilePage} path="/profile-page" />
+                <PrivateRoute component = {EditUserDataPage} path="/edit-page" />
               </Switch>
             </>
         </Router>
-      );
-    }
+  );
 }
-
 export default App;

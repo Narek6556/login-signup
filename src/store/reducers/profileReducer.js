@@ -13,7 +13,8 @@ function profileReducer(state = initialState, action) {
                 ...state,
                 first_name: action.payload.first_name,
                 last_name: action.payload.last_name,
-                email: action.payload.email
+                email: action.payload.email,
+                password: action.payload.password, 
             }
         case profileTypes.EDIT_PROFILE:
             return {

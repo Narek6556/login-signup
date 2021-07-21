@@ -1,20 +1,18 @@
-import { Component } from "react";
 import Title from "../components/Title";
 import {Link} from 'react-router-dom';
 import TableItem from "../components/TableItem";
 import Button from "../components/Button";
-import {connect} from "react-redux";
 import {addUser} from "../store/actions/usersListAction";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import '../App.css';
 
-class UsersPage extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-    
+function UsersPage() {
+    const dispatch = useDispatch();
+    const users = useSelector(state => state.users);
 
-    componentDidMount() {
+    useEffect(() => {
         let url = "http://localhost:3001/users";
         const options = {
             method: 'GET',
@@ -26,48 +24,35 @@ class UsersPage extends Component {
             .then(data => {
                 return data.json();
             }).then(data => {
-                this.props.addUser(data);
+                dispatch(addUser(data));
             }) 
-    }
+    }, []);
 
-    render() {
-        return (
-            <div>
-                <div className="button-area-home button-home">
-                    <Link to="/">
-                        <Button text="Home"/>
-                    </Link>
-                </div>
-                <Title text="Users Page"/>
-                <table className="users-table">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>first name</th>
-                            <th>second name</th>
-                            <th>email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            this.props.users.map(user => <TableItem key = {user.id} {...user}/>)
-                        }
-                    </tbody>
-                </table>
+    return (
+        <div>
+            <div className="button-area-home button-home">
+                <Link to="/">
+                    <Button text="Home"/>
+                </Link>
             </div>
-        );
-    }
+            <Title text="Users Page"/>
+            <table className="users-table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>first name</th>
+                        <th>last name</th>
+                        <th>email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        users.map(user => <TableItem key = {user.id} {...user}/>)
+                    }
+                </tbody>
+            </table>
+        </div>
+    );
 }
 
-function mapStateToProps(state) {
-    const {users} = state;
-    return {
-        users
-    }
-}
-
-const mapDispatchToProps = {
-    addUser,
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersPage);
+export default UsersPage;

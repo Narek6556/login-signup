@@ -44,6 +44,21 @@ button {
   justify-content: space-between;
 }
 
+.user-img {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgb(32, 88, 141);
+}
+
+.user-info-container {
+  display: flex;
+  justify-content: center;
+}
+
+.user-info h2 {
+  color: rgb(32, 88, 141);
+}
+
 .button-home {
   display: flex;
   justify-content: space-between;
