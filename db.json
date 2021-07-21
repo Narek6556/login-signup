@@ -13,6 +13,13 @@
       "email": "aghasyan.na@gmail.com",
       "password": "123",
       "id": 2
+    },
+    {
+      "first_name": "Narek",
+      "last_name": "Agasyan",
+      "email": "na-ag@mail.ru",
+      "password": "123",
+      "id": 3
     }
   ]
 }
