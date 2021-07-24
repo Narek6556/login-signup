@@ -5,6 +5,7 @@
       "last_name": "Aghasyan",
       "email": "agasyan.na@gmail.com",
       "password": "123",
+      "gender": "male",
       "id": 1
     },
     {
@@ -12,6 +13,7 @@
       "last_name": "Agasyan",
       "email": "aghasyan.na@gmail.com",
       "password": "123",
+      "gender": "male",
       "id": 2
     },
     {
@@ -19,7 +21,143 @@
       "last_name": "Agasyan",
       "email": "na-ag@mail.ru",
       "password": "123",
+      "gender": "male",
       "id": 3
+    },
+    {
+      "first_name": "Nare",
+      "last_name": "Aghasyan",
+      "email": "aghasyan.na@gmail.com",
+      "password": "12",
+      "gender": "female",
+      "id": 4
+    },
+    {
+      "first_name": "Narek",
+      "last_name": "Aghasyan",
+      "email": "agsyan.na@gmail.com",
+      "password": "123",
+      "gender": "male",
+      "id": 5
+    }
+  ],
+  "events": [
+    {
+      "title": "Hello",
+      "description": "wer",
+      "age": "12 - 18",
+      "id": 1
+    },
+    {
+      "title": "Hello",
+      "description": "df",
+      "age": "12 - 18",
+      "id": 2
+    },
+    {
+      "title": "dwf",
+      "description": "sdfsdf",
+      "age": "12 - 18",
+      "id": 3
+    },
+    {
+      "title": "asf",
+      "description": "adf",
+      "age": "12 - 18",
+      "guests": [
+        null,
+        null,
+        null
+      ],
+      "id": 4
+    },
+    {
+      "title": "asf",
+      "description": "adf",
+      "age": "12 - 18",
+      "guests": [
+        2,
+        1
+      ],
+      "id": 5
+    },
+    {
+      "title": "asfasf",
+      "description": "asfas",
+      "age": "12 - 18",
+      "isPrivate": false,
+      "guests": [
+        2
+      ],
+      "id": 6
+    },
+    {
+      "title": "as",
+      "description": "asd",
+      "age": "12 - 18",
+      "isPrivate": false,
+      "guests": [
+        1
+      ],
+      "id": 7
+    },
+    {
+      "title": "qwe",
+      "description": "qwe",
+      "age": "12 - 18",
+      "isPrivate": false,
+      "guests": [
+        1
+      ],
+      "id": 8
+    },
+    {
+      "title": "asf",
+      "description": "daf",
+      "age": "12 - 18",
+      "guests": [
+        2
+      ],
+      "id": 9
+    },
+    {
+      "title": "af",
+      "description": "adf",
+      "age": "12 - 18",
+      "guests": [],
+      "id": 10
+    },
+    {
+      "title": "asf",
+      "description": "adf",
+      "age": "12 - 18",
+      "isPrivate": true,
+      "guests": [],
+      "id": 11
+    },
+    {
+      "title": "asf",
+      "description": "adfa",
+      "age": "12 - 18",
+      "isPrivate": true,
+      "guests": [
+        3,
+        2
+      ],
+      "id": 12
+    },
+    {
+      "title": "Hello",
+      "description": "asfasf",
+      "age": "0 - 12",
+      "isPrivate": true,
+      "guests": [
+        2,
+        3
+      ],
+      "startDate": "2021-07-27T12:16:35.000Z",
+      "endDate": "2021-07-23T12:16:35.372Z",
+      "id": 13
     }
   ]
 }

@@ -10,6 +10,17 @@ body {
   /* width: 1500px; */
 }
 
+.img-cont {
+  width: 120px;
+  height: 120px;
+  display: block;
+}
+
+.date {
+  display: flex;
+  justify-content: space-between;
+}
+
 .content {
   /* display: flex;
   align-items: flex-start; */
@@ -102,8 +113,13 @@ button {
 
 .input-container > input {
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 2px;
   font-size: 25px;
+}
+.input-container > textarea {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 21px;
 }
 
 .input-container > label {

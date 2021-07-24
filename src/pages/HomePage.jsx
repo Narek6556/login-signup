@@ -16,6 +16,9 @@ function HomePage() {
                     <Link to="/profile-page">
                         <Button text="Profile Page"/>
                     </Link> 
+                    <Link to="/add-event-page">
+                        <Button text="Add Event"/>
+                    </Link>
                 </div>
             </div>
         </div>

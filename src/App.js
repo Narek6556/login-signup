@@ -8,6 +8,7 @@ import ProfilePage from './pages/ProfilePage';
 import HomePage from './pages/HomePage';
 import PrivateRoute from './components/PrivateRoute';
 import EditUserDataPage from './pages/EditUserDataPage';
+import AddEventPage from './pages/AddEventPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 <PrivateRoute component = {HomePage} path="/home-page" />
                 <PrivateRoute component = {ProfilePage} path="/profile-page" />
                 <PrivateRoute component = {EditUserDataPage} path="/edit-page" />
+                <PrivateRoute component = {AddEventPage} path="/add-event-page" />
               </Switch>
             </>
         </Router>

@@ -42,6 +42,7 @@ function UsersPage() {
                         <th>id</th>
                         <th>first name</th>
                         <th>last name</th>
+                        <th>gender</th>
                         <th>email</th>
                     </tr>
                 </thead>
