@@ -16,9 +16,22 @@ body {
   display: block;
 }
 
+.image-container {
+  margin-top: 20px;
+}
+
+.img-field {
+  margin-top: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
 .date {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .content {

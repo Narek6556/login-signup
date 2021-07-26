@@ -64,7 +64,7 @@ export default function AddEventPage() {
     const handleFileChange = (event) => {
         const files = Array.from(event.target.files);
         const img = document.createElement("img");
-        const imgField = document.getElementsByClassName("img-field");
+        const imgCont = document.getElementsByClassName("image-container");
         const promises = files.map(
           (file) =>
             new Promise((res) => {
@@ -79,10 +79,10 @@ export default function AddEventPage() {
             })
         );
         Promise.all(promises).then(() => {
-            imgField[0].appendChild(img);
+            imgCont[0].appendChild(img);
             img.src = files[0].blob_url;
             img.classList.add("img-cont");
-          console.log(files);
+        //console.log(files);
         });
       };
 
@@ -215,6 +215,9 @@ export default function AddEventPage() {
                             type = "file"
                             onChange = {handleFileChange}
                         />
+                        <div className = "image-container">
+                        
+                        </div>
                     </div>
                     
                     <div className="button-area">
